@@ -15,7 +15,7 @@ pd.set_option('display.width', None)
 pd.set_option('display.max_rows', 20)
 pd.set_option('display.float_format', lambda x: '%.3f' % x)
 
-df = pd.read_csv(r"C:\Users\Asus\OneDrive\Masaüstü\diabetes.csv")
+df = pd.read_csv("datasets\diabetes.csv")
 
 def check_df(dataframe, head=5): #Get to know the dataset
     print("##################### Shape #####################")
@@ -173,7 +173,7 @@ for col in zero_columns:
 df.isnull().sum()
 
 ##################################
-# # OUTLIER ANALYSIS
+# OUTLIER ANALYSIS
 ##################################
 
 def outlier_thresholds(dataframe, col_name, q1=0.05, q3=0.95): # Determining the threshold values
@@ -281,7 +281,7 @@ scaler = StandardScaler()
 df[num_cols] = scaler.fit_transform(df[num_cols])
 
 ##################################
-# # Modeling
+# Modeling
 ##################################
 
 ######################################################
